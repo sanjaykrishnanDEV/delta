@@ -248,7 +248,9 @@ const productSlice = createSlice({
   },
   reducers:{
     addProduct:(state,action)=>{
-        state.products.push(action.payload)
+        // state.products.push(action.payload);
+       // console.log(state)
+        return state.initialState
     }
 
   }

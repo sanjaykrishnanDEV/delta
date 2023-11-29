@@ -1,17 +1,19 @@
 import React from "react";
 import Header from "./Header";
-import { motion, spring } from "framer-motion";
+import Hero from "./Hero";
+import Banner from "./Banner";
+import Footer from "./Footer";
+import {  useSelector } from "react-redux";
 const Publicpage = () => {
+  const products = useSelector((store) => store.products);
+
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header />
-      <motion.div 
-      drag="y"
-      whileHover={{scale:2}}
-      className="h-10 bg-blue-900 w-12 mt-80 ms-10 rounded-full"
-      >
-        <p>sanjay</p>
-      </motion.div>
+      <Hero content={products.products[10]}/>
+      <Banner />
+      <Hero content={products.products[13]}/>
+      <Footer />
     </div>
   );
 };
